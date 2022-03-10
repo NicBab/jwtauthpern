@@ -1,9 +1,12 @@
 import React from 'react'
 
-const login = () => {
+const Login = ({setAuth}) => {
   return (
-    <h1>login</h1>
+    <>
+    <h1>Login</h1>
+    <button onClick={() => setAuth(true)}>Authenticate</button>
+    </>
   )
 }
 
-export default login
+export default Login
