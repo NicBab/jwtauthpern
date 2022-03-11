@@ -15,26 +15,26 @@ const Login = ({setAuth}) => {
 
   return (
     <>
-      <h1 className="text-center mt-5">Login</h1>
+     <h1 className="text-center my-5">Login</h1>
       <form>
         <input
           className="form-control my-3"
-          type="name"
+          type="email"
           name="email"
           placeholder="email"
-          value="email"
+          value={email}
           onChange={e => onChange(e)}
         />
         <input
           className="form-control my-3"
-          type="name"
+          type="password"
           name="password"
           placeholder="password"
-          value="password"
+          value={password}
           onChange={e => onChange(e)}
         />
+        <button className="btn btn-success">Login</button>
       </form>
-      <button className="btn btn-success">Login</button>
     </>
   );
 }
