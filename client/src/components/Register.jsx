@@ -37,9 +37,7 @@ const Register = ({setAuth}) => {
 
   return (
     <>
-      <h1>Register</h1>
-      <form>
-      <h1 className="text-center my-5">Register</h1>
+      <h1 className="text-center my-5">Register</h1>    
       <form onSubmit={onSubmitForm}>
         <input
           className="form-control my-3"
@@ -67,22 +65,11 @@ const Register = ({setAuth}) => {
           value={password}
           onChange={(e) => onChange(e)}
         />
-
-        <input
-          className="form-control my-3"
-          type="text"
-          name="email"
-          placeholder="email"
-          value={password}
-          onChange={(e) => onChange(e)}
-        />
         <button className="btn btn-success">Submit</button>
       </form>
     </>
   );
-
  }
 
-}
 
 export default Register
