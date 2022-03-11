@@ -16,7 +16,7 @@ function App () {
       <Router>
         <div className="container">
           <Routes>
-            <Route
+              <Route
               exact
               path="/login"
               element={
@@ -34,7 +34,7 @@ function App () {
                 !isAuthenticated ? (
                   <Register setAuth={setAuth} />
                 ) : (
-                  <Login setAuth={setAuth} />
+                  <Dashboard setAuth={setAuth} />
                 )
               }
             />
