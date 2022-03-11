@@ -1,3 +1,3 @@
-export { Default as Dashboard } from './Dashboard'
-export { Default as Login } from './Login'
-export { Default as Register } from './Register'
+export { default as Dashboard } from './Dashboard'
+export { default as Login } from './Login'
+export { default as Register } from './Register'
