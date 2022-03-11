@@ -14,9 +14,10 @@ const authorization = require("../middleware/authorization")
 router.post("/register", validInfo, async (req, res) => {
     try {
         const { name, email, password} = req.body
-        const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
-            email
-        ]);
+        const user = await pool.query(
+          "SELECT * FROM users WHERE user_email = $1",
+          [email]
+        );
 
        if (user.rows.length !== 0) {
            return res.status(401).send("This user already exists!")
