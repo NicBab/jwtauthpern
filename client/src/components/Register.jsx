@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Register = ({setAuth}) => {
-  
+
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -35,9 +35,10 @@ const Register = ({setAuth}) => {
 
   };
 
-const Register = () => {
   return (
     <>
+      <h1>Register</h1>
+      <form>
       <h1 className="text-center my-5">Register</h1>
       <form onSubmit={onSubmitForm}>
         <input
@@ -48,6 +49,7 @@ const Register = () => {
           value={name}
           onChange={(e) => onChange(e)}
         />
+
         <input
           className="form-control my-3"
           type="email"
@@ -56,6 +58,7 @@ const Register = () => {
           value={email}
           onChange={(e) => onChange(e)}
         />
+
         <input
           className="form-control my-3"
           type="password"
@@ -65,11 +68,21 @@ const Register = () => {
           onChange={(e) => onChange(e)}
         />
 
+        <input
+          className="form-control my-3"
+          type="text"
+          name="email"
+          placeholder="email"
+          value={password}
+          onChange={(e) => onChange(e)}
+        />
         <button className="btn btn-success">Submit</button>
       </form>
     </>
   );
+
  }
+
 }
 
 export default Register
