@@ -1,0 +1,6 @@
+.dashboardText,
+.userName,
+.logoutButton {
+    display: flex;
+    justify-content: center;
+}

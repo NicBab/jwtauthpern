@@ -3,11 +3,12 @@ import "./App.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Dashboard, Login, Register, Home } from "./components/index";
+import { Container } from 'react-bootstrap'
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  Navigate
 } from "react-router-dom";
 
 toast.configure();
@@ -39,8 +40,12 @@ const App = () => {
 
   return (
     <>
+     <Container 
+          className="d-flex align-items-center justify-content-center" 
+          style={{ minHeight: "100vh"}}>
+          <div className="w-100" style={{maxWidth: "400px"}}>
       <Router>
-        <div className="container">
+        {/* <div className="container"> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route
@@ -74,8 +79,10 @@ const App = () => {
               }
             />
           </Routes>
-        </div>
+       
       </Router>
+      </div>
+      </Container>
     </>
   );
 };

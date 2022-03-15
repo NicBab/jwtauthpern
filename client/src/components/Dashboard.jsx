@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify";
+import './css/Dashboard.css'
 
 const Dashboard = ({ setAuth }) => {
   
@@ -40,11 +41,14 @@ const Dashboard = ({ setAuth }) => {
 
   return (
     <>
-      <h1> Dashboard </h1>
-      <div>{name}</div>
+      <h1 className="dashboardText"> Dashboard </h1>
+      <div className="userName">Welcome, {name} !</div>
+      <div className="logoutButton">
       <button className="btn btn-primary" onClick={(e) => logout(e)}>
         Logout
       </button>
+      </div>
+     
     </>
   );
 };

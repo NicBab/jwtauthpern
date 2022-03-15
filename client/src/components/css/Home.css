@@ -1,0 +1,16 @@
+.homeText, 
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn.btn-primary,
+.btn.btn-info {
+   margin: 10px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
