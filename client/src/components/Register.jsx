@@ -1,44 +1,53 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const Register = ({setAuth}) => {
-
+const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
-    name: ""
-  })
+    name: "",
+  });
 
-  const {email, password, name} = inputs
+  const { email, password, name } = inputs;
 
   const onChange = (e) => {
-    setInputs({...inputs, [e.target.name] : e.target.value})
-  }
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
 
   const onSubmitForm = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      const body = {name, email, password}
+      const body = { name, email, password };
       const response = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
-        headers: {"Content-Type" : "application/json"},
-        body: JSON.stringify(body)
-      })
-      const parseRes = await response.json()
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
 
-      localStorage.setItem("token", parseRes.token)
+      const parseRes = await response.json();
 
-      setAuth(true)
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
+
+        setAuth(true);
+        toast.success("Registered Successfully!");
+      } else {
+        setAuth(false);
+        toast.error(parseRes);
+      }
     } catch (err) {
-      console.error(err.message)
+      console.error(err.message);
     }
-
   };
 
   return (
     <>
-      <h1 className="text-center my-5">Register</h1>    
+      <div>
+        <Link to="/">Home</Link>
+      </div>
+      <h1 className="text-center my-5">Register</h1>
       <form onSubmit={onSubmitForm}>
         <input
           className="form-control my-3"
@@ -71,7 +80,6 @@ const Register = ({setAuth}) => {
       <Link to="/login">Login</Link>
     </>
   );
- }
+};
 
-
-export default Register
+export default Register;
